@@ -1,10 +1,11 @@
 'use strict'
-const tooltips = document.querySelectorAll("tooltip");
-console.log(tooltips);
-
+const tooltips = document.querySelectorAll('.tooltip');
 tooltips.forEach((tooltip) => {
-    tooltip.addEventListener('click', onTooltipClick);
+   tooltip.addEventListener('mouseover', onTooltipClick);
 });
+tooltips.forEach((tooltip) => {
+    tooltip.addEventListener('mouseleave', onTooltipClick);
+ });
 function onTooltipClick (evt) {
     evt.currentTarget.classList.toggle('tooltip-animated');
-}
+};

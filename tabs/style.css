@@ -1,0 +1,114 @@
+.tabs{ 
+    display: flex; 
+    flex-direction: row; 
+} 
+
+body {
+    background-color: darkblue;
+}
+ 
+.tablinks { 
+    border: lightgrey 1px solid;  
+    outline: none; 
+    cursor: pointer; 
+    width: 25%; 
+    height: 80px; 
+    background-color: #efefef;  
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;  
+    overflow: hidden; 
+    transition: transform 0.3s ease; 
+} 
+ 
+.tablinks span { 
+    z-index: 2; 
+    padding: 0; 
+    margin: 0; font-weight: 400; 
+    color: #686868;  
+    transition: color 0.5s ease;  
+    text-transform: uppercase; 
+    font-weight: bold; 
+} 
+ 
+.wrapper-tabcontent{ 
+    background-color: #efefef;  
+    position: relative;  
+    top: 0;  
+    opacity: 1; 
+    padding: 40px 60px; 
+    overflow: hidden; 
+} 
+ 
+.tabcontent { 
+    display: block; 
+    min-height: 180px; 
+ 
+    display: none; 
+} 
+ 
+.tabcontent h3 { 
+    margin: 0; 
+    font-size: 40px; 
+    opacity: 0.1; 
+    padding: 0; 
+    animation: left 1s ease; 
+} 
+ 
+.tabcontent p { 
+    width: 100%; 
+    margin: 0; 
+    padding: 0; 
+    font-size: 16px; 
+    color: #686868; 
+    line-height: 28px; 
+    font-weight: 100; 
+    animation: right 0.6s ease; 
+} 
+ 
+.tablinks-active { 
+    display: block;
+    position: relative; 
+    border-bottom: none; 
+    border-top: none; 
+    transition: color 0.3s ease; 
+} 
+.tablinks-active span { 
+    color: #000000; 
+} 
+ 
+.tablinks-active:hover span { 
+    color: #000000; 
+} 
+ 
+.tablinks-active::before { 
+    content:""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background:red; 
+    transform-origin: center top; 
+    transform: scaleY(0.05); 
+    transition: transform 0.3s ease-in-out; 
+} 
+.tablinks-active:hover::before { 
+    transform: scaleY(1); 
+} 
+ 
+.tabcontent-active { 
+    display: block;
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		transform: scale(0.5);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

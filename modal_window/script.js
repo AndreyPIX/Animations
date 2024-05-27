@@ -1,10 +1,9 @@
 'use strict'
-const btnOpen = document.getElementById("btn--open");
-const modal = document.getElementById("modal")
-
+const btnOpen = document.querySelector(".btn--open");
+const btnClose = document.querySelector(".btn--close")
+const modal = document.querySelector(".modal")
 const modalViewHandler = () => {
     modal.classList.toggle('modal--open');
 }
-
 btnOpen.addEventListener("click", modalViewHandler);
-modal.addEventListener("click", modalViewHandler);
+btnClose.addEventListener('click', modalViewHandler); 

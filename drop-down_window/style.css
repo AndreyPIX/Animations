@@ -1,32 +1,142 @@
+header {
+    background-color: aqua;
+    height: 100px;
+    align-items: center;
+}
+main {
+    background-color: gray;
+}
+h1 {
+    text-align: center;
+    padding: 5px;
+}
+p {
+    padding: 5px;
+    margin-left: 10px;
+}
+
 .burger {
     width: 50px;
-    height:50px;
+    height: 50px;
     box-sizing: border-box;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    position:relative;
+    position: relative;
     z-index: 110;
 }
+
+.burger-slider{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
 .burger__line {
     display: block;
     width: 100%;
     height: 2px;
     position: absolute;
     left: 0;
-    background-color: #000;
-    opacity: 1; 
+    background-color: black;
+    opacity: 1;
     transition: 0.3s ease-in-out;
 }
-.burger__line:nth-child(1){
+
+.burger__line:nth-child(1) {
     top: 0;
 }
-.burger__line:nth-child(2){
+
+.burger__line:nth-child(2) {
     top: 20px;
 }
-.burger__line:nth-child(3){
+
+.burger__line:nth-child(3) {
     top: 20px;
 }
+
 .burger__line:nth-child(4) {
     top: 40px;
+}
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    padding-top: 100px;
+    background-color: darkblue;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.main-nav__list {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.main-nav__item {
+    opacity: 1;
+    transition: opacity 0.2s ease 0s;
+}
+
+.main-nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+.main-nav__link:hover,
+.main-nav__link:focus {
+    color: brown;
+    text-decoration: underline;
+}
+
+.menu--open .main-nav {
+    transform: translateY(0%);
+    transition: transform 0.2s ease;
+}
+
+.menu--open .main-nav__item {
+    opacity: 1;
+}
+
+.menu--open .burger__line:nth-child(1) {
+    transform: scaleX(0);
+}
+.menu--open .burger__line:nth-child(2) {
+    transform: rotate(45deg);
+    background-color: #fff;
+}
+.menu--open .burger__line:nth-child(3) {
+    transform: rotate(-45deg);
+    background-color: #fff;
+}
+.menu--open .burger__line:nth-child(4) {
+    transform: scaleX(0);
+}
+
+.svg1 {
+    z-index: 110;
+    color: black;
+}
+
+.menu--open svg{
+    z-index: 110;
+    fill: white;
 }
